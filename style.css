@@ -1,0 +1,212 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+
+  --bg-color: #09090b;
+  --text-color: #f4f4f5;
+  --bg-location-input: #18181b;
+  --text-color-main: #fafafa;
+  --border-input: #27272a;
+  --bg-button: #aff445;
+  --text-button: #132f00;
+  --text-timer: #a1a1ab;
+  --text-atividades-vazio: #71717A;
+}
+
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--text-color-main);
+  background-color: transparent;
+  line-height: 120%;
+}
+
+body {
+  font-size: 1.6rem;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+}
+
+option {
+  background-color: var(--bg-color);
+}
+
+#app {
+  padding: 4rem 2rem;
+  max-width: 32rem;
+  margin: 0 auto;
+}
+
+#place {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+
+  padding: 2.2rem 1.6rem;
+
+  font-size: 1.4rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 3.2rem;
+}
+
+.fields {
+  display: grid;
+  gap: 0.8rem;
+}
+
+input,
+select,
+button {
+  width: 100%;
+  outline: none;
+}
+
+.field-wrapper {
+  padding: 1.8rem;
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-input);
+  border-radius: 0.8rem;
+
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+input,
+select {
+  border: none;
+  font-size: 1.6rem;
+}
+
+input[type="checkbox"] {
+  all: unset;
+}
+
+.field-wrapper:focus-within {
+  outline: 2px solid yellowgreen;
+}
+
+button {
+  margin-top: 1.2rem;
+  border: none;
+  padding: 1.2rem 2rem;
+  background-color: var(--bg-button);
+  border-radius: 0.8rem;
+
+  font-weight: 500;
+  font-size: 1.6rem;
+  letter-spacing: -0.02em;
+
+  color: var(--text-button);
+}
+
+.card-bg {
+  border-radius: 12px;
+  background: var(--bg-location-input);
+
+  /* shape */
+  box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.03) inset,
+    0px 1px 0px 0px rgba(255, 255, 255, 0.03) inset,
+    0px 8px 8px 0px rgba(0, 0, 0, 0.1), 0px 4px 4px 0px rgba(0, 0, 0, 0.1),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.1), 0px 0px 0px 1px rgba(0, 0, 0, 0.1);
+}
+
+main {
+  margin-top: 3.2rem;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 600;
+  font-size: 2.4rem;
+
+  margin-bottom: 2.4rem;
+}
+
+section {
+  display: grid;
+  gap: 1rem;
+}
+
+section input[type="checkbox"] {
+  inset: 0;
+  position: absolute;
+}
+
+section .card-bg {
+  position: relative;
+  padding: 1rem 1.6rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+section .card-bg:has(:checked) .active,
+section .card-bg .inactive {
+  display: block;
+}
+
+section .card-bg:has(:checked) .inactive,
+section .card-bg .active {
+  display: none;
+}
+
+section .card-bg > div {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.atividades-vazio {
+  color: var(--text-atividades-vazio);
+}
+
+time {
+  font-size: 1.4rem;
+  color: var(--text-timer);
+  text-align: right;
+}
+
+time.full {
+  display: none;
+}
+
+@media (width > 1024px) {
+  #app {
+    display: flex;
+    max-width: 960px;
+    gap: 3.2rem;
+  }
+
+  main {
+    margin-top: 0;
+    flex: 1;
+  }
+
+  h1 {
+    text-align: left;
+  }
+
+  time.full {
+    display: block;
+  }
+
+  time.short {
+    display: none;
+  }
+}
+
+section .card-bg {
+  animation: appear 300ms;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+}
