@@ -18,7 +18,7 @@ NLW Plann.er é uma aplicação desenvolvida durante o NLW Journey da Rocketseat
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seu-usuario/NLW-Plann.er.git
+   git clone https://github.com/igorferreira007/NLW-Planner.er.git
 
 ## Link
 Projeto postado em: https://igorferreira007.github.io/NLW-Planner.er/
